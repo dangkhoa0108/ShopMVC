@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TeduShop.Model.Models
 {
@@ -13,20 +10,36 @@ namespace TeduShop.Model.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public int ID { set; get; }
+
         [Required]
-        public string CustomCustomerName { get; set; }
+        [MaxLength(256)]
+        public string CustomerName { set; get; }
+
         [Required]
-        public string CustomerAddress { get; set; } 
+        [MaxLength(256)]
+        public string CustomerAddress { set; get; }
+
         [Required]
-        public string CustomerEmail { get; set; }
+        [MaxLength(256)]
+        public string CustomerEmail { set; get; }
+
         [Required]
-        public string CustomerMobile { get; set; }
-        public string CustomerMessage { get; set; }
-        public string PaymentMethod { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public string CreatedBy { get; set; }
-        public string PaymentStatus { get; set; }
-        public bool Status { get; set; }
+        [MaxLength(50)]
+        public string CustomerMobile { set; get; }
+
+        [Required]
+        [MaxLength(256)]
+        public string CustomerMessage { set; get; }
+
+        [MaxLength(256)]
+        public string PaymentMethod { set; get; }
+
+        public DateTime? CreatedDate { set; get; }
+        public string CreatedBy { set; get; }
+        public string PaymentStatus { set; get; }
+        public bool Status { set; get; }
+
+        public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }
 }
