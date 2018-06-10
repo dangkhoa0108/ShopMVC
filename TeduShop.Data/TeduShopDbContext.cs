@@ -8,7 +8,7 @@ namespace TeduShop.Data
     /// </summary>
     public class TeduShopDbContext:DbContext
     {
-        public TeduShopDbContext() : base("TeduShopConnection")
+        public TeduShopDbContext() : base("name=TeduShopConnection")
         {
             Configuration.LazyLoadingEnabled = false;
         }
