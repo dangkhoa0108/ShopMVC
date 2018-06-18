@@ -15,7 +15,7 @@ namespace TeduShop.Service
         void Update(PostCategory postCategory);
         void Delete(int id);
         IEnumerable<PostCategory> GetAll();
-        IEnumerable<PostCategory> GetAllByParentId();
+        IEnumerable<PostCategory> GetAllByParentId(int parentId);
         PostCategory GetById(int id);
 
     }
@@ -31,32 +31,32 @@ namespace TeduShop.Service
         }
         public void Add(PostCategory postCategory)
         {
-            throw new NotImplementedException();
+            _postCategoryRepository.Add(postCategory);
         }
 
         public void Update(PostCategory postCategory)
         {
-            throw new NotImplementedException();
+            _postCategoryRepository.Update(postCategory);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+           _postCategoryRepository.Delete(id);
         }
 
         public IEnumerable<PostCategory> GetAll()
         {
-            throw new NotImplementedException();
+            return _postCategoryRepository.GetAll();
         }
 
-        public IEnumerable<PostCategory> GetAllByParentId()
+        public IEnumerable<PostCategory> GetAllByParentId(int parentId)
         {
-            throw new NotImplementedException();
+            return _postCategoryRepository.GetMulti(x => x.Status && x.ParentID == parentId);
         }
 
         public PostCategory GetById(int id)
         {
-            throw new NotImplementedException();
+            return _postCategoryRepository.GetSingleById(id);
         }
     }
 }
