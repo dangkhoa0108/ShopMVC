@@ -1,11 +1,17 @@
 ﻿using System.Net;
 using System.Net.Http;
+using System.Web.Http;
 using TeduShop.Model.Models;
 using TeduShop.Service;
 using TeduShop.Web.Insfrastructure.Core;
 
 namespace TeduShop.Web.Api
 {
+    /// <summary>
+    /// API Controller
+    /// </summary>
+    
+    [RoutePrefix("api/postcategory")]
     public class PostCategoryController : ApiControllerBase
     {
         private IPostCategoryService _postCategoryService;
@@ -14,6 +20,7 @@ namespace TeduShop.Web.Api
         {
             this._postCategoryService = postCategoryService;
         }
+        [Route("getall")]
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
