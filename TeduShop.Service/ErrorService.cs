@@ -1,5 +1,4 @@
-﻿using System;
-using TeduShop.Data.Infrastructure;
+﻿using TeduShop.Data.Infrastructure;
 using TeduShop.Data.Repositories;
 using TeduShop.Model.Models;
 

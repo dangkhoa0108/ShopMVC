@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TeduShop.Data.Infrastructure
+﻿namespace TeduShop.Data.Infrastructure
 {
     public class UnitOfWork:IUnitOfWork
     {
@@ -13,7 +7,7 @@ namespace TeduShop.Data.Infrastructure
 
         public UnitOfWork(IDbFactory dbFactory)
         {
-            this._dbFactory = dbFactory;
+            _dbFactory = dbFactory;
         }
 
         public TeduShopDbContext DbContext => _dbContext ?? (_dbContext = _dbFactory.Init());
