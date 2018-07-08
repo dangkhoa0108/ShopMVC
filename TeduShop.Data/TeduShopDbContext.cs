@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Data
@@ -6,7 +7,7 @@ namespace TeduShop.Data
     /// <summary>
     /// Khởi tại hàm dbContext
     /// </summary>
-    public class TeduShopDbContext:DbContext
+    public class TeduShopDbContext:IdentityDbContext<ApplicationUser>
     {
         public TeduShopDbContext() : base("name=TeduShopConnection")
         {
@@ -40,7 +41,13 @@ namespace TeduShop.Data
         /// <param name="builder"></param>
         protected override void OnModelCreating(DbModelBuilder builder)
         {
+            builder.Entity<IdentityUserRole>().HasKey(i => new {i.UserId,i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
+        }
 
+        public static TeduShopDbContext Create()
+        {
+            return new TeduShopDbContext();
         }
     }
 }
