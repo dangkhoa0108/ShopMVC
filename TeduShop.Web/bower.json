@@ -2,6 +2,13 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "angular": "~1.7.2"
+    "angular": "~1.7.2",
+    "angular-ui-router": "~1.0.19",
+    "jquery": "~3.3.1",
+    "bootstrap": "~3.3.7",
+    "fastclick": "v1.0.6",
+    "jquery-slimscroll": "slimScroll#v1.3.8",
+    "Ionicons": "ionicons#v2.0.1",
+    "font-awesome": "font-awsome#v4.7.0"
   }
 }
