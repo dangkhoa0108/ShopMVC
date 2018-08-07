@@ -229,6 +229,9 @@
     <Content Include="app\app.js" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\mydemo\mydemo.module.js" />
+    <Content Include="app\components\mydemo\mydemoListController.js" />
+    <Content Include="app\components\mydemo\mydemoView.html" />
     <Content Include="app\components\products\products.module.js" />
     <Content Include="app\components\products\productAddView.html" />
     <Content Include="app\components\products\productEditController.js" />
@@ -1837,6 +1840,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="scripts\angular-mocks.js" />
+    <None Include="scripts\angular.intellisense.js" />
+    <Content Include="scripts\angular.js" />
+    <Content Include="scripts\angular.min.js" />
+    <None Include="scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2074,6 +2082,7 @@
     <Content Include="app\shared\modules\tedushop.common.js" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="scripts\angular.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeduShop.Common\TeduShop.Common.csproj">
